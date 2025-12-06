@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { BarChart3, Settings, Zap, Share2, Shield, Clock } from "lucide-react"
-import { useState, useEffect } from "react"
+import { BarChart3, Settings, Zap, Share2, Shield, Clock } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function FeaturesPage() {
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const features = [
     {
@@ -20,7 +20,8 @@ export default function FeaturesPage() {
     {
       icon: <Settings className="w-12 h-12 text-primary" />,
       title: "Project Management",
-      description: "Create, edit, and delete projects with ease. Manage project details and keep everything organized.",
+      description:
+        "Create, edit, and delete projects with ease. Manage project details and keep everything organized.",
     },
     {
       icon: <Zap className="w-12 h-12 text-primary" />,
@@ -28,33 +29,38 @@ export default function FeaturesPage() {
       description:
         "Update project status on the fly with simple dropdowns. Track progress from Not Started to Completed.",
     },
-    {
-      icon: <Share2 className="w-12 h-12 text-primary" />,
-      title: "Data Persistence",
-      description: "All your projects and login information are saved locally, so your data persists across sessions.",
-    },
+    // {
+    //   icon: <Share2 className="w-12 h-12 text-primary" />,
+    //   title: "Data Persistence",
+    //   description: "All your projects and login information are saved locally, so your data persists across sessions.",
+    // },
     {
       icon: <Shield className="w-12 h-12 text-primary" />,
       title: "Secure Login",
-      description: "Simple, secure login system that keeps your workspace protected and personalized.",
+      description:
+        "Simple, secure login system that keeps your workspace protected and personalized.",
     },
     {
       icon: <Clock className="w-12 h-12 text-primary" />,
       title: "Real-time Updates",
-      description: "See all changes instantly. Add, edit, or delete projects with immediate visual feedback.",
+      description:
+        "See all changes instantly. Add, edit, or delete projects with immediate visual feedback.",
     },
-  ]
+  ];
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <main className="min-h-screen">
       {/* Hero */}
       <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-secondary to-background">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Powerful Features</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Powerful Features
+          </h1>
           <p className="text-lg md:text-xl text-muted-foreground">
-            Everything you need to manage your team's projects efficiently and effectively.
+            Everything you need to manage your team's projects efficiently and
+            effectively.
           </p>
         </div>
       </section>
@@ -69,14 +75,20 @@ export default function FeaturesPage() {
                 className="p-6 md:p-8 bg-card rounded-lg border border-border hover:shadow-lg hover:border-primary/50 transition-all duration-300 animate-fade-in group hover:scale-105"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="mb-4 group-hover:scale-110 transition-transform">{feature.icon}</div>
-                <h3 className="text-lg md:text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{feature.description}</p>
+                <div className="mb-4 group-hover:scale-110 transition-transform">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg md:text-xl font-semibold mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
     </main>
-  )
+  );
 }

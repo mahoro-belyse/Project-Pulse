@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
-import ProjectDashboard from "@/components/project-dashboard"
-import LoginForm from "@/components/login-form"
-import { useAuth } from "@/app/auth-context"
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import ProjectDashboard from "@/components/project-dashboard";
+import LoginForm from "@/components/login-form";
+import { useAuth } from "@/app/auth-context";
 
 export default function DashboardPage() {
-  const [isLoading, setIsLoading] = useState(true)
-  const { isLoggedIn, username } = useAuth()
-  const router = useRouter()
+  const [isLoading, setIsLoading] = useState(true);
+  const { isLoggedIn, username } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
-    setIsLoading(false)
-  }, [isLoggedIn, router])
+    setIsLoading(false);
+  }, [isLoggedIn, router]);
 
   if (isLoading) {
     return (
@@ -23,12 +23,22 @@ export default function DashboardPage() {
           <p className="text-muted-foreground">Loading...</p>
         </div>
       </div>
-    )
+    );
   }
 
   return (
     <main className="min-h-screen bg-background">
-      {!isLoggedIn ? <LoginForm /> : <ProjectDashboard username={username || ""} />}
+      {!isLoggedIn ? (
+        <LoginForm />
+      ) : (
+        <ProjectDashboard
+          username={username || ""}
+          onLogout={() => {
+            localStorage.removeItem("username");
+            router.push("/");
+          }}
+        />
+      )}
     </main>
-  )
+  );
 }
