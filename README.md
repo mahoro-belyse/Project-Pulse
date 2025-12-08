@@ -30,7 +30,7 @@ It provides a simple way for small teams to track their projects, with simulated
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/project-pulse.git
+git clone https://github.com/mahoro-belyse/Project-Pulse.git
 cd project-pulse
 npm install
 npm run dev
