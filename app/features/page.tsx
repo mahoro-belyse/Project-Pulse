@@ -29,11 +29,12 @@ export default function FeaturesPage() {
       description:
         "Update project status on the fly with simple dropdowns. Track progress from Not Started to Completed.",
     },
-    // {
-    //   icon: <Share2 className="w-12 h-12 text-primary" />,
-    //   title: "Data Persistence",
-    //   description: "All your projects and login information are saved locally, so your data persists across sessions.",
-    // },
+    {
+      icon: <Share2 className="w-12 h-12 text-primary" />,
+      title: "Data Persistence",
+      description:
+        "All your projects and login information are saved locally, so your data persists across sessions.",
+    },
     {
       icon: <Shield className="w-12 h-12 text-primary" />,
       title: "Secure Login",
