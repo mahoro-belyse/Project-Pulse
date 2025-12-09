@@ -77,7 +77,7 @@ export default function LoginForm() {
           </form>
 
           <p className="text-center text-sm text-muted-foreground mt-6">
-            This is a simulated login for demo purposes.
+            Step into your workspace
           </p>
         </div>
       </div>
